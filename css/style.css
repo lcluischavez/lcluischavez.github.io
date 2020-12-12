@@ -335,7 +335,16 @@ img.contactPic{
 }
 
 .resumeButton {
-    border: grey 4px solid;
+    border: black 4px solid;   
+    margin-top: 60px;
+}
+
+.resButton {
+    color: black;
+}
+
+.heading {
+    color: black;
 }
 
 .contact{
