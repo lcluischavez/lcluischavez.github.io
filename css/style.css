@@ -168,11 +168,9 @@ body {
 }
 
 .service-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	margin-bottom: auto;
-	margin-top: auto;
+    margin-bottom:50px;
+    margin-top:50px;
+
 }
 
 .service-icon:hover {
