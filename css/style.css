@@ -357,3 +357,7 @@ img.contactPic{
     display: flex;
     justify-content: space-between;
 }
+
+.bioPic {
+    object-fit: fill;
+}
