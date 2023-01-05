@@ -353,11 +353,16 @@ img.contactPic{
     justify-content: space-around;
 }
 
+
+
+
 #myBio{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .bioPic {
-    object-fit: fill;
+    height: auto;
+    width: auto;
+    max-height: 350px;
 }
