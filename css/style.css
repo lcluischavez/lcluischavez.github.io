@@ -359,6 +359,7 @@ img.contactPic{
 #myBio{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .bioPic {
