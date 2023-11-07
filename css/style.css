@@ -352,19 +352,3 @@ img.contactPic{
     display: flex;
     justify-content: space-around;
 }
-
-
-
-
-#myBio{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.bioPic {
-    height: auto;
-    width: auto;
-    margin: 0 auto;
-    max-height: 370px;
-}
