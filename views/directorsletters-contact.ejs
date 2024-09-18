@@ -1,0 +1,139 @@
+<%- include('partials/directorsletters-header') -%>
+<head>
+   
+</head>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+
+    contactForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const subject = document.getElementById('subject').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('msg').value;
+
+      // Send the form data to the server
+      fetch('/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, subject, email, message }),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          // Handle the response from the server if needed
+          // For example, you can show a success message to the user
+        })
+        .catch((error) => {
+          console.error('Error sending email:', error);
+          // Handle any errors that occur during form submission
+        });
+    });
+  });
+</script>
+
+<body>
+ 
+<div class="main-wrapper">
+  <!-- Slider Start -->
+  <section class="contact-slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <span class="h6 d-inline-block mb-4 subhead text-uppercase"><span class="text-color">Director Letters</span></span>
+                <h1 class="text-uppercase text-white mb-5">Contact<br><span class="text-color"> Director</span> Letters</h1>
+            </div>
+        </div>
+    </div>
+  </section>
+  <!-- Section Slider End -->
+
+  <section class="contact">
+      <div id="contact-left" style="margin-top: 7rem;">
+          <h1>We Are <span class="text-color">Director</span> Letters</h1>
+          <br>
+          <br>
+          <img style="width: 90%; margin-left: auto; margin-right: auto;" src="/images/maleconductor.jpg">
+      </div>
+      <div class="contact-form">
+          <div class="form-header">
+            <h3>Our team would love to hear from you!</h3>
+            <h3></h3>
+            <h5>Have comments, questions, feedback, to share?</h5>
+            <h5>Also send your requests for letters, our educators are</h5>
+            <h5>more than happy to craft a custom letter for your needs!</h5>
+          </div>
+        
+          <form id="contactForm">
+            <div class="form">
+              <div class="contact-row">
+                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="subject" placeholder="Subject">
+              </div>
+              <div class="email">
+                <input type="email" id="email" placeholder="Email">
+              </div>
+              <div class="msg">
+                <textarea name="msg" id="msg" cols="43" rows="6" placeholder="Message"></textarea>
+              </div>
+              <br>
+              <div class="about-button">
+                <button class="btn btn-main" id="submitButton" type="submit">Send</button>
+              </div>
+            </div>
+          </form>
+        </div>          
+  </section>
+
+  <div class="letter-writer-link" style="margin-bottom:12rem;text-align:center;">
+    <h4><a href="/directorsletters/termsandservices">Terms and Services</a></h4>
+  </div>
+
+  <section class="more-info">
+      <div>
+          <div>
+              <h4>Our Social Links</h4>
+              <h5>Follow our social media account for up to date.</h5>
+          </div>
+          <div class="sm-icons">
+              <ul class="social-media-icons">
+                  <li>
+                      <a href="https://www.facebook.com/ScholarshipAuditions/">
+                          <img src="/images/facebook.png" alt="facebook icon">
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://twitter.com/Accoladi">
+                          <img src="/images/twitter.png" alt="twitter icon">
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.instagram.com/scholarshipauditions/">
+                          <img src="/images/instagram.png" alt="instagram icon">
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.linkedin.com/company/scholarship-auditions/mycompany/">
+                          <img src="/images/linkedin.webp" alt="linkedin icon">
+                      </a>
+                  </li>
+              </ul>
+              <h5><a href="mailto: directorsletters.contact@gmail.com">directorsletters.contact@gmail.com</a></h5>
+          </div>
+      </div>
+      <div>
+        <br>
+        <h4>Address</h4>
+        <h5>3201 Dickerson Pike</h5>
+        <h5>Nashville, TN 37207</h5>
+        <br>
+    </div>
+  </section>
+</div>
+
+</body>
+<%- include('partials/directorsletters-footer') -%>

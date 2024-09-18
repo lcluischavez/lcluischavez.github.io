@@ -1,0 +1,157 @@
+<%- include('partials/directorsletters-header') -%>
+
+<div class="main-wrapper">
+    <!-- Slider Start -->
+    <section class="slider3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <span class="h6 d-inline-block mb-4 subhead text-uppercase"><span class="text-color">Director Letters</span></span>
+                    <h1 class="text-uppercase text-white mb-5">Band<br><span class="text-color"> Director</span> Letters</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section Slider End -->
+
+    <section class="letters-section">
+        <div class="letter-writer-section">
+            <h4 class="letter-writer-link">Letters by:</h4>
+            <br>
+            <div class="letter-writer-link">
+                <div style="display:flex; flex-direction: column; justify-content: center;">
+                    <h4><a href="/directorsletters/band-director-letters">Band Directors</a></h4>
+                    <a style="text-align: center;" href="#" id="openBandModal" >Table of Contents</a>
+                    <div id="bandModal" class="modal">
+                        <div class="modal-content mc">
+                          <span style="font-size: 4rem;" class="close" id="closeBandModal">&times;</span>
+                          <!-- Add your modal content for Band Letters here -->
+                          <embed src="/pdfs/bdtoc.pdf" width="1000" height="1200" style="height: 65rem;" type="application/pdf">
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex; flex-direction: column; justify-content: center;">
+                    <h4><a href="/directorsletters/choir-director-letters">Choir Directors</a></h4>
+                    <a style="text-align: center;" href="#" id="openChoirModal">Table of Contents</a>
+                    <div id="choirModal" class="modal">
+                        <div class="modal-content mc">
+                          <span style="font-size: 4rem;" class="close" id="closeChoirModal">&times;</span>
+                          <!-- Add your modal content for Choir Letters here -->
+                          <embed src="/pdfs/cdtoc.pdf" width="1000" height="1200" style="height: 65rem;" type="application/pdf">
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex; flex-direction: column; justify-content: center;">
+                    <h4><a href="/directorsletters/orchestra-director-letters">Orchestra Directors</a></h4>
+                    <a style="text-align: center;" href="#" id="openOrchestraModal">Table of Contents</a>
+                    <div id="orchestraModal" class="modal">
+                        <div class="modal-content mc">
+                          <span style="font-size: 4rem;" class="close" id="closeOrchestraModal">&times;</span>
+                          <!-- Add your modal content for Orchestra Letters here -->
+                          <embed src="/pdfs/odtoc.pdf" width="1000" height="1200" style="height: 65rem;" type="application/pdf">
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex; flex-direction: column; justify-content: center;">
+                    <h4><a href="/directorsletters/musical-theater-director-letters">Musical Theater Directors</a></h4>
+                    <a style="text-align: center;" href="#" id="openTheaterModal">Table of Contents</a>
+                    <div id="theaterModal" class="modal">
+                        <div class="modal-content mc">
+                          <span style="font-size: 4rem;" class="close" id="closeTheaterModal">&times;</span>
+                          <!-- Add your modal content for Musical Theater Letters here -->
+                          <embed src="" width="1000" height="1200" style="height: 65rem;" type="application/pdf">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="letter-type">
+            <h1>Band Director Letters</h1>
+            <form class="letter-form" action="/band-director-letters" method="GET">
+                <br>
+                <h4>Filter Band Director letters by letter recipient & letter category dropdowns or both.</h4>
+                <!--<input type="text" name="search" placeholder="Search letters" value="<%= searchQuery %>">-->
+                <select class="letterselect" name="recipient">
+                    <option value="">Letter Recipients</option>
+                    <% letterrecipients.forEach(function(recipient) { %>
+                    <option value="<%= recipient.recipient_id %>" <% if (recipientFilter == recipient.recipient_id) { %>selected<% } %>>
+                    <%= recipient.name %>
+                    </option>
+                    <% }); %>
+                </select>
+                <select class="letterselect" name="category">
+                    <option value="">Letter Categories</option>
+                    <% lettercategories.sort((a, b) => a.name.localeCompare(b.name)).forEach(function(category) { %>
+                      <option value="<%= category.category_id %>" <% if (categoryFilter == category.category_id) { %>selected<% } %>>
+                        <%= category.name %>
+                      </option>
+                    <% }); %>
+                </select> 
+                <br>
+                <br>                 
+                <div class="about-button">
+                    <button class="btn btn-main" type="submit">Search</button>
+                </div>
+            </form>
+            <br>
+            <div class="letters">
+                <% if (letters.length > 0) { %>
+                <% letters.forEach(function(letter) { %>
+                <div class="letter">
+                    <h1></h1>
+                    <h4><%= letter.title %></h4>
+                    <a href="/directorsletters/letters/<%= letter.letter_id %>" style="  margin-bottom: 50px;
+                        align-self: center;
+                        width: 100px;
+                        transition-duration: 0.4s;
+                        padding: 3px;" class="btn btn-main">View Letter</a>
+                    <!-- Add more details based on your letter schema -->
+                </div>
+                <% }); %>
+                <% } else { %>
+                <p>No letters found.</p>
+                <% } %>
+            </div>
+
+            <!-- Pagination links -->
+            <div class="pagination">
+                <% if (page > 1) { %>
+                  <h4><a href="/directorsletters/band-director-letters?search=<%= searchQuery %>&category=<%= categoryFilter %>&page=<%= page - 1 %>">&laquo; Previous</a></h4>
+                <% } %>
+                <% if (page < totalPages) { %>
+                  <h4><a href="/directorsletters/band-director-letters?search=<%= searchQuery %>&category=<%= categoryFilter %>&page=<%= page + 1 %>">  Next &raquo;</a></h4>
+                <% } %>
+            </div>
+        </div>
+    </section>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- JavaScript code for modals -->
+<script>
+    // Function to open a modal by its ID
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = "block";
+    }
+  
+    // Function to close a modal by its ID
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      modal.style.display = "none";
+    }
+  
+    // Event listeners to open the modals
+    document.getElementById("openBandModal").addEventListener("click", () => openModal("bandModal"));
+    document.getElementById("openChoirModal").addEventListener("click", () => openModal("choirModal"));
+    document.getElementById("openOrchestraModal").addEventListener("click", () => openModal("orchestraModal"));
+    document.getElementById("openTheaterModal").addEventListener("click", () => openModal("theaterModal"));
+
+  
+    // Event listeners to close the modals
+    document.getElementById("closeBandModal").addEventListener("click", () => closeModal("bandModal"));
+    document.getElementById("closeChoirModal").addEventListener("click", () => closeModal("choirModal"));
+    document.getElementById("closeOrchestraModal").addEventListener("click", () => closeModal("orchestraModal"));
+    document.getElementById("closeTheaterModal").addEventListener("click", () => closeModal("theaterModal"));
+</script>
+
+<%- include('partials/directorsletters-footer') -%>

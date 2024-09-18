@@ -1,0 +1,262 @@
+@import url('https://fonts.cdnfonts.com/css/didact-gothic');
+@import url('https://fonts.cdnfonts.com/css/moldyen');
+
+* {
+    font-family: 'Didact Gothic', sans-serif;
+}
+
+/*--------  Header  ---------*/
+
+.mainTitle {
+    margin-top: 5em;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 44%;
+;}
+
+.orderButton {
+    text-align: center;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+    background-color: #efe6eb !important;
+    color: black;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 6em;
+    margin-bottom: 6em;
+}
+
+.navItem {
+    color: black;
+    font-weight: 500;
+    font-size: 1.5em;
+}
+
+.homeHero{
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+}
+
+.homeHero img {
+    width: 100%;
+    height: 60rem;
+    object-fit: cover;
+}
+
+/*--------  FOOTER  ---------*/
+
+footer{
+    background-color: #efe6eb;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 15em;
+    color: black !important;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+
+  .footer-text{
+    text-align: right;
+  }
+  
+  .footer-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  
+  .links-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 13px;
+  }
+  
+  .links-wrapper h2{
+    font-size: 20px;
+    font-weight: 600;
+    color: black !important;
+  }
+  
+  .link-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .link-list li{
+    list-style: none;
+    font-weight: 350;
+    text-align: center;
+  }
+  
+  .link-list a{
+    color: black;
+  }
+  
+  .social-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .social-links li{
+    list-style: none;
+    font-size: 20px;
+    margin: 1rem;
+    color: black;
+  }
+  
+  .fineprint{
+    text-align: center;
+  }
+  
+  .fineprint a{
+    color: black;
+  }
+
+/*    background-color: #ecefe6;
+*/
+
+/*----------   Home Page   ----------*/
+
+.autoRotate {
+    animation: autoRotateAnimation;
+    animation-timeline: view();
+    height: 50rem;
+    display: flex;
+    margin: auto;
+}
+
+@keyframes autoRotateAnimation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+/*    background-color: #ecefe6;
+*/
+/*----------   Menu Page   ----------*/
+
+.menuPageTitle{
+    font-size: 7em;
+    text-align: center;
+    font-family: 'Moldyen', sans-serif;
+}
+
+.menuSectionTitle{
+    font-size: 5em;
+    margin: 1em;
+    text-align: center;
+
+}
+
+.menuHero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6em;
+    margin-bottom: 10em;
+    padding: 4em;
+    background-color: #efe6eb;
+}
+
+.menuHeroImg img{
+    width: 75rem;
+}
+
+.bowls {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.bowl {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 4em;
+    width: 15em;
+}
+
+.bowl img{
+    filter: drop-shadow(6px 5px 8px rgb(0 0 0 / 0.6));
+}
+
+.smoothies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.smoothie {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 6em;
+    width: 10em;
+}
+
+.smoothie img{
+    filter: drop-shadow(6px 5px 8px rgb(0 0 0 / 0.6));
+}
+
+.fullToast{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.toastleft{
+    width: 30%;
+}
+
+.toastRight{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-self: center;
+    width: 60%;
+    background-color: #efe6eb;
+    padding: 3em;
+}
+
+.tb{
+    display: flex;
+    flex-direction: column;
+}
+
+.toastBreads{
+    width: 20rem;
+}
+
+.toastSpreads{
+    width: 20rem;
+}
+
+.toastToppings{
+    width: 20rem;
+}

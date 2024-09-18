@@ -1,0 +1,1153 @@
+/* --------HEADER/NAV--------- */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+p {
+    text-indent: 3rem;
+}
+
+h2 {
+  vertical-align: center;
+  text-align: center;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.nav-logo{
+    height: 60px;
+    margin-left: 3rem;
+    margin-right: 2rem;
+    width: auto;
+}
+
+.nav-title{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+.nav-list-item a{
+    color: white;
+    font-size: 20px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: black;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #FFF;
+  height: 50px;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(25, 24, 24, 0.3) 0px 7px 13px -3px, rgba(30, 29, 29, 0.2) 0px -3px 0px inset;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+  overflow: hidden;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: '';
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: '';
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 700px) {
+  .menu-button-container {
+    display: flex;
+    padding-right: 3rem;
+    padding-top: 1.5rem;
+  }
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 80px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #menu-toggle:checked ~ .menu li {
+    border: 1px solid black;
+    height: 3.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .menu > li {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(14, 14, 14);
+  }
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid black;
+  }
+}
+
+
+
+/* --------FOOTER---------*/
+
+footer{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.7) ),  url('/images/orchestra-4-pc-leah-nash-1900x600_orig.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.links-wrapper{
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 13px;
+}
+
+.links-wrapper h2{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.link-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.link-list li{
+    list-style: none;
+    font-weight: 350;
+}
+
+.link-list a{
+    color: white;
+}
+
+.social-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.social-links li{
+    list-style: none;
+    font-size: 20px;
+    margin: 1rem;
+    color: white;
+}
+
+.fineprint{
+    text-align: center;
+}
+
+.fineprint a{
+    color: white;
+}
+
+/*-------HOME PAGE--------*/
+
+.home-container {
+    display: flex !important;
+    flex-direction: column !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/*-------HOME PAGE - HERO SECTION--------*/
+
+.home-hero{
+    height: 450px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url('/images/femaleconductor.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: 50% 37%;
+}
+
+/*-------HOME PAGE - LETTER SECTION--------*/
+
+.home-letters{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+    margin-bottom: 5rem;
+    background-color: #f5d37a;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+
+.letter-one, .letter-two, .letter-three, .letter-four{
+    height: 36.75rem;
+    width: 25.75rem;
+    border: 4px solid #EEB522;
+}
+
+.letter-one h5, .letter-two h5, .letter-three h5, .letter-four h5{
+    position: relative;
+    top: 310px;
+    font-size: 18px;
+}
+
+.letter-one{
+    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) ),  url('/images/banddirector.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 25% 5%;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 70px;
+    box-shadow: 0px 3px 8px rgb(68, 68, 68);
+    margin: 0 10px;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.letter-two{
+    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) ),  url('/images/choral-conductor.webp');
+    background-size: 360px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    position: relative;
+    bottom: 70px;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 3px 8px rgb(68, 68, 68);
+    margin: 0 10px;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.letter-three{
+    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) ),  url('/images/femalechoir6.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 85% 0;
+    position: relative;
+    bottom: 70px;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 3px 8px rgb(68, 68, 68);
+    margin: 0 10px;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+.letter-four{
+    background-image:linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8) ),  url('/images/theatredirector2.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    position: relative;
+    bottom: 70px;
+    color: white;
+    text-align: center;
+    box-shadow: 0px 3px 8px rgb(68, 68, 68);
+    margin: 0 10px;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+/*-------HOME PAGE - ABOUT SECTION----------*/  
+
+section.yayeet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.yee1{
+    max-width: 500px;
+    margin: auto 2rem;
+}
+.yee2{
+    max-width: 500px;
+    margin-top: 3rem;
+    margin: auto 2rem;
+
+}
+
+.about{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #f9e5af;
+    margin-top: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;}
+
+.about-logo{
+    display: flex;
+    width: 370px;
+    padding-left: 5rem;
+    margin: auto;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.about-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: start;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    max-width: 900px;
+    margin: auto;
+}
+
+.about-title{
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+}
+
+.about-body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.about-button button{
+    width: 14rem;
+    height: 5rem;
+    background-color: #f5d37a;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 2rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+/*-------HOME PAGE - SITES SECTION--------*/
+
+.home-sites{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15rem;
+}
+
+#site {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-top: 2rem;
+}
+
+.web-one, .web-two, .web-three{
+    height: 36.75rem;
+    width: 35.75rem;
+    border: 4px solid #f8f9fe;
+    color: black;
+    box-shadow: 0px 3px 8px rgb(68, 68, 68);
+    border-radius: 5px;
+}
+
+#site h5, #site h5, #site h5{
+    margin-top: 3rem;
+    font-weight: 600;
+    font-size: 16px;
+    color: black;
+}
+
+.web-one{
+    background-image: url('/images/accoladi-logo-yellow.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 60% 25%;
+}
+
+.web-two{
+    background-image: url('/images/nsma-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 5%;
+}
+
+.web-three{
+    background-image: url('/images/my-music-future-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 45% 50%;   
+}
+
+/*-------HOME PAGE - CONNECT SECTION--------*/
+
+.connect{
+    display: flex;
+    flex-direction:row ;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    background-color:  #f9e5af;
+    margin-top: 15rem;
+    margin-bottom: 6rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    padding-right: 5rem;
+    padding-left: 5rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.connect-button button{
+    width: 14rem;
+    height: 5rem;
+    background-color: #f5d37a;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+/*-------HOME PAGE - T&S SECTION--------*/
+
+.terms-serv {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.terms-serv a {
+    color: black;
+    text-decoration: underline;
+}
+
+/*-------ABOUT PAGE--------*/
+
+.about-container {
+    display: flex !important;
+    flex-direction: column !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/*-------ABOUT PAGE - HERO SECTION--------*/
+
+.aboutus-hero{
+    height: 460px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url('/images/ChoirCollegeChoir.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 49%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.aboutus-hero-title {
+    color: white;   
+    font-size: 70px
+}
+
+/*-------ABOUT PAGE - MAIN SECTION--------*/
+
+.aboutus-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10rem;
+}
+
+.aboutus{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    justify-content: center;
+    align-content: center;
+    padding: 4rem 0;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    background-color: #f9e5af;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutus-logo{
+    width: 100%;
+    max-width: 500px;
+    margin: auto auto;
+    margin-top: 12rem;
+    margin-left: 4rem;
+}
+
+.aboutus-text{
+    max-width: 90%;
+    margin: 5rem auto;
+    font-size: medium;
+}
+
+
+/*----------CONTACT PAGE----------*/
+
+.contact-container {
+    display: flex !important;
+    flex-direction: column !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/*-------CONTACT PAGE - HERO SECTION--------*/
+
+.contact-hero{
+    height: 450px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),  url('/images/contact-img1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.contact-hero-title {
+    color: white;   
+    font-size: 70px
+}
+
+/*-------CONTACT PAGE - CONTACT US SECTION--------*/
+
+.contact{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact-form{
+    margin-top: 4rem;
+}
+
+.form{
+    padding-top: 1rem;
+}
+
+.contact-row, .email{
+    padding-bottom: 1rem;
+}
+
+.email input{
+    width: 100%;
+}
+
+input[type=text]{
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: none;
+    border-bottom: 1px solid #DDDDDD;
+  }
+
+  textarea{
+    border: 1px solid #DDDDDD;
+    width: 100%
+  }
+   
+  input[type=text]:focus, textarea:focus {
+    box-shadow: 0 0 5px rgb(138, 138, 138);
+    padding: 3px 0px 3px 3px;
+    margin: 5px 1px 3px 0px;
+    border: 1px solid rgb(138, 138, 138);
+    outline: none;
+  }
+
+/*-------CONTACT PAGE - MORE INFO SECTION--------*/
+
+.more-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    text-align: center;
+    background-color: #f9e5af;
+    margin-top: 3rem;
+    margin-bottom: 11rem;
+    padding: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;}
+
+.more-info a{
+    text-decoration: none;
+    color: black;
+}
+
+.more-info a:hover{
+    text-decoration: underline;
+}
+
+.social-media-icons{
+    display: flex;
+    justify-content: center;
+}
+
+.social-media-icons img{
+    height: 20px;
+    width: auto;
+}
+
+.social-media-icons li{
+    list-style: none;
+    margin-right: 1.5rem;
+}
+
+.map {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+    margin-bottom: 16rem;
+    background-color: #EBEBE9;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.map iframe{
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+
+
+/*---------LETTERS PAGE---------*/
+
+.letters-container {
+    display: flex !important;
+    flex-direction: column !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/*-------LETTERS PAGE - HERO SECTION--------*/
+
+.letters-hero{
+    height: 450px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url('/images/62d5a88c9d0f8b836f6e61af_feature2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 67%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.letters-hero-title {
+    color: white;   
+    font-size: 70px
+}
+
+/*-------LETTERS PAGE - MAIN SECTION--------*/
+
+.letter-type{
+    background-color: #f9e5af;
+    text-align: center;
+    padding: 7rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+    margin-bottom: 15rem;
+}
+
+.letter-type h1 {
+    color: black;
+    text-align: start;
+}
+
+.search-filter {
+    display: flex;
+    text-align: end;
+    margin-bottom: 3rem;
+}
+
+select { 
+    width: 20rem;
+    height: 3rem;
+}
+
+select.letterselect {
+    width: 49%;
+    height: 5rem;
+    min-width: 20rem;
+    margin: auto;
+    font-size: medium;
+}
+
+input { 
+    width: 27.7rem;
+    height: 3rem;
+}
+
+
+.letters{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.letter{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 1rem;
+    max-width: 23rem;
+    height: 330px;
+}
+
+.letter-form{
+    text-align: right;
+}
+
+.letter-writer-section{
+    padding: 6rem 0;
+}
+
+.letter-writer-link{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.letter-writer-link h4 {
+    padding: 2rem 3rem;
+    background-color: #f5d37a;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;    margin: 1rem 2rem;
+}
+
+.letter-writer-link a{
+    color: black;
+}
+
+
+.buttons {
+    margin-bottom: 50px;
+    background-color: white;
+    color:black;
+    align-self: center;
+    width: 100px;
+    transition-duration: 0.4s;
+    padding: 3px;
+}
+  
+.buttons:hover {
+    background-color: black;
+    color: white;
+}
+
+.pagination a{
+    color: black;
+}
+
+/*-------INDEX LETTER PAGE--------*/
+
+/*
+.letter-index-container{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 6rem;
+}
+
+.index-letter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.index-letter-title {
+    width: 65%;
+    text-align: center;
+}
+
+.index-letter-categories {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.index-letter-category{
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+}
+
+.letter-content{
+    max-width: 790px;
+    width: 100%;
+    height: 890px;
+    box-shadow: 0px 3px 8px rgb(68, 68, 68);
+    overflow-y: auto;
+    overflow-x: auto;
+    resize: both;
+    position: relative;
+    z-index: 2;
+}
+
+iframe{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+*/
+
+/*   120x330   */
+
+.index-letter {
+    background-color: #f9e5af;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    margin-top: 10rem;
+    margin-bottom: 12rem;
+}
+
+.index-letter-categories {
+    display: flex;
+    margin: 4rem 12.2rem;
+
+}
+
+.index-letter-category{
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+}
+
+.bannersec {
+    background-size: contain;
+    max-width: 475px;
+    width: 27.5%;
+    max-height: 907.5px;
+    background-repeat: no-repeat;
+    margin: auto 0;
+
+}
+
+.lettersec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-height: 1350px;
+    height: 100%;
+    max-width: 790px;
+    width: 100%;
+}
+
+.letter-content{
+    max-width: 790px;
+    width: 100%;
+    height: 890px;
+    box-shadow: 0px 3px 8px rgb(68, 68, 68);
+    overflow-y: auto;
+    overflow-x: auto;
+    resize: both;
+    position: relative;
+    background-color: white;
+}
+
+iframe{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+.c5{
+    background-color: #f5d37a !important;
+}
+
+/*-------ADD/EDIT LETTER FORM--------*/
+.add-letter-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-letter-section{
+    background-color: lightgray;
+    width: 1000px;
+    height: 720px;
+    margin-top: 9rem;
+    margin-bottom: 9rem;
+}
+.add-letter-section form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+}
+.add-letter-form .form-field{
+    width: 350px;
+    /* margin: 0 auto; */
+    padding: 0 auto;
+    /* align-items: center;
+    align-self: center; */
+   
+
+}
+
+.form-field select{
+    width: 191.5px;
+}
+
+.inputs{
+    display: flex;
+   
+    
+}
+label.center{
+    text-align: left;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+.add-letter-form .form-field h2{
+    text-align: center;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    align-self: center;
+}
+input.center{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    align-self: center;
+}
+
+.index-letter-title{
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.form-field{
+    display: flex ;
+    flex-direction: row ;
+    justify-content: space-between;
+}
+
+
+/*-------Orchetra Page Hero--------*/
+.orchestra-letters-hero{
+    height: 450px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url('/images/orchetra-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 67%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.orchestra-letters-hero-title {
+    color: white;   
+    font-size: 70px
+}
+
+/*-------Band Page Hero--------*/
+.band-letters-hero{
+    height: 450px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url('/images/band-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 67%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: 0 25%;
+}
+
+.band-letters-hero-title {
+    color: white;   
+    font-size: 70px
+}
+
+/*-------Choir Page Hero--------*/
+.choir-letters-hero{
+    height: 450px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url('/images/choir-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 67%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: 0 25%;
+}
+
+.choir-letters-hero-title {
+    color: white;   
+    font-size: 70px
+}
+
+/*-------Musical Page Hero--------*/
+
+.musical-letters-hero{
+    height: 450px;
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),  url('/images/musicaltheater-hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 67%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-position: 0 52%;
+}
+
+.musical-letters-hero-title {
+    color: white;   
+    font-size: 70px
+}
+
+/*---------TERMS AND SERVICES-----------*/
+
+.terms-and-servcies-container{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    justify-content: center;
+    align-content: center;
+    text-align: left;
+    margin-top: 10rem;
+    margin-bottom: 15rem;
+}
+
+.tstitle{
+    text-align: center;
+}
+.tsmain{
+    text-align: center;
+}
+
+.tslist {
+    text-indent: 3rem;
+    text-decoration: dotted !important;
+}
